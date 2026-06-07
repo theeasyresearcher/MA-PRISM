@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MA-PRISM — Mathematics PYQs Ready In Schrödinger's Method</title>
+  <meta name="description" content="MA-PRISM: A free WhatsApp community with 1,729 PYQs across 10 maths topics. Structured daily practice for mathematics competitive exam aspirants. Built by a chemistry researcher." />
+
+  <!-- Open Graph / WhatsApp / Social Preview -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="MA-PRISM — Free Mathematics PYQ Community" />
+  <meta property="og:description" content="1,729 past year questions. 15 per day. 10 topics. 100% free WhatsApp community for mathematics competitive exam aspirants. Starting July 2026." />
+  <meta property="og:image"       content="https://theeasyresearcher.github.io/ma-prism/og-image.png" />
+  <meta property="og:url"         content="https://theeasyresearcher.github.io/ma-prism/" />
+  <meta property="og:site_name"   content="MA-PRISM" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="MA-PRISM — Free Mathematics PYQ Community" />
+  <meta name="twitter:description" content="1,729 PYQs. 15/day. Free. WhatsApp community for mathematics competitive exams. Starting July 2026." />
+  <meta name="twitter:image"      content="https://theeasyresearcher.github.io/ma-prism/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+  /* ════════════════════════════
+     LIGHT THEME
+  ════════════════════════════ */
+  :root {
+    --bg:        #fafaf7;
+    --bg2:       #f3f2ec;
+    --surface:   #ffffff;
+    --ink:       #1a1a18;
+    --ink2:      #3d3d38;
+    --muted:     #7a7a70;
+    --blue:      #1a56db;
+    --blue-lt:   #dbeafe;
+    --blue-dk:   #1440b0;
+    --red:       #c0392b;
+    --red-lt:    #fde8e6;
+    --green:     #1a7a4a;
+    --green-lt:  #dcfce7;
+    --amber:     #b45309;
+    --amber-lt:  #fef3c7;
+    --border:    #ddddd4;
+    --border2:   #c8c8bc;
+    --rule:      rgba(26,86,219,0.09);
+    --nav-bg:    rgba(250,250,247,0.95);
+    --shadow:    0 2px 16px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(26,86,219,0.10);
+    --dark-bg:   #1a1a18;
+    --dark-txt:  #f5f5f0;
+    --dark-muted:rgba(245,245,240,0.58);
+    --dark-label:#7eb3f8;
+    --game-bg:   rgba(255,255,255,0.04);
+    --game-bdr:  rgba(255,255,255,0.10);
+    --game-hover:rgba(255,255,255,0.07);
+    --game-btn:  #7eb3f8;
+    --game-btn-c:#1a1a18;
+  }
+
+  /* ════════════════════════════
+     DARK THEME
+  ════════════════════════════ */
+  [data-theme="dark"] {
+    --bg:        #0f0f0d;
+    --bg2:       #141410;
+    --surface:   #1c1c18;
+    --ink:       #f0efe8;
+    --ink2:      #c8c7be;
+    --muted:     #6b6b60;
+    --blue:      #5b9cf6;
+    --blue-lt:   rgba(91,156,246,0.15);
+    --blue-dk:   #7eb3f8;
+    --red:       #f07060;
+    --red-lt:    rgba(240,112,96,0.15);
+    --green:     #4ade80;
+    --green-lt:  rgba(74,222,128,0.12);
+    --amber:     #fbbf24;
+    --amber-lt:  rgba(251,191,36,0.12);
+    --border:    #2a2a24;
+    --border2:   #3a3a32;
+    --rule:      rgba(91,156,246,0.09);
+    --nav-bg:    rgba(15,15,13,0.96);
+    --shadow:    0 2px 16px rgba(0,0,0,0.32);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.30);
+    --dark-bg:   #080806;
+    --dark-txt:  #f0efe8;
+    --dark-muted:rgba(240,239,232,0.55);
+    --dark-label:#7eb3f8;
+    --game-bg:   rgba(255,255,255,0.03);
+    --game-bdr:  rgba(255,255,255,0.08);
+    --game-hover:rgba(255,255,255,0.06);
+    --game-btn:  #5b9cf6;
+    --game-btn-c:#0f0f0d;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden; line-height: 1.65;
+    transition: background 0.28s, color 0.28s;
+  }
+
+  /* ── GRAPH PAPER ── */
+  .graph-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(var(--rule) 1px, transparent 1px),
+      linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .graph-bg.faded {
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  /* ════════════════════════════
+     NAV
+  ════════════════════════════ */
+  nav {
+    position: fixed; top: 38px; left: 0; right: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 1.5rem; height: 58px;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    border-bottom: 1.5px solid var(--border);
+    transition: background 0.28s, border-color 0.28s;
+    gap: 0.75rem;
+  }
+  .nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem; font-weight: 700; color: var(--blue);
+    text-decoration: none; letter-spacing: 0.04em;
+    display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;
+  }
+  .nav-logo .psi { font-size: 1.25rem; color: var(--red); }
+
+  /* Desktop links */
+  .nav-links {
+    display: flex; gap: 1.4rem; list-style: none; align-items: center;
+    flex: 1; justify-content: center;
+  }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    transition: color 0.18s; white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue) !important; color: #fff !important;
+    padding: 0.38rem 1rem; border-radius: 5px;
+    font-weight: 700 !important; transition: background 0.18s !important;
+  }
+  .nav-cta:hover { background: var(--blue-dk) !important; }
+
+  /* Nav right cluster */
+  .nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+
+  /* Hamburger */
+  .hamburger {
+    display: none; flex-direction: column; justify-content: center;
+    gap: 5px; width: 36px; height: 36px; background: none;
+    border: 1.5px solid var(--border2); border-radius: 7px;
+    cursor: pointer; padding: 6px; transition: border-color 0.18s;
+  }
+  .hamburger:hover { border-color: var(--blue); }
+  .hamburger span {
+    display: block; height: 2px; background: var(--ink);
+    border-radius: 2px; transition: all 0.25s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile drawer */
+  .mobile-menu {
+    display: none; position: fixed;
+    top: 96px; left: 0; right: 0; z-index: 190;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    border-bottom: 1.5px solid var(--border);
+    padding: 1rem 1.5rem 1.5rem;
+    flex-direction: column; gap: 0.1rem;
+    transition: background 0.28s;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    display: block; padding: 0.75rem 0.5rem;
+    color: var(--ink2); text-decoration: none;
+    font-size: 0.95rem; font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.18s;
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--blue); }
+  .mobile-menu .mob-cta {
+    margin-top: 0.75rem;
+    background: var(--blue); color: #fff !important;
+    text-align: center; border-radius: 8px; border: none;
+    padding: 0.85rem; font-size: 1rem; font-weight: 700;
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    background: var(--surface); border: 1.5px solid var(--border2);
+    border-radius: 100px; cursor: pointer;
+    display: flex; align-items: center;
+    width: 50px; height: 27px; padding: 3px;
+    position: relative; transition: background 0.28s, border-color 0.28s;
+    flex-shrink: 0;
+  }
+  .toggle-thumb {
+    width: 19px; height: 19px; border-radius: 50%;
+    background: var(--blue);
+    transition: transform 0.28s cubic-bezier(.4,0,.2,1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem;
+  }
+  [data-theme="dark"] .toggle-thumb { transform: translateX(23px); }
+  .toggle-bg-icon {
+    position: absolute; right: 6px; font-size: 0.58rem;
+    opacity: 0.4; pointer-events: none;
+  }
+  [data-theme="dark"] .toggle-bg-icon { left: 6px; right: auto; }
+
+  /* ════════════════════════════
+     HERO
+  ════════════════════════════ */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding: 8rem 1.25rem 4rem;
+    position: relative; overflow: hidden; background: var(--bg);
+  }
+
+  /* Marquee strip — fixed at very top, always visible */
+  .formula-strip {
+    position: fixed; top: 0; left: 0; right: 0; height: 38px;
+    z-index: 210;
+    background: linear-gradient(90deg, #1440b0 0%, #1a56db 40%, #c0392b 70%, #1440b0 100%);
+    background-size: 200% 100%;
+    animation: stripShift 6s linear infinite;
+    display: flex; align-items: center;
+    overflow: hidden; white-space: nowrap;
+    box-shadow: 0 2px 12px rgba(26,86,219,0.45);
+  }
+  @keyframes stripShift {
+    0%   { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+  }
+  .formula-track {
+    display: flex; align-items: center;
+    animation: marquee 28s linear infinite;
+  }
+  .formula-track span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem; font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.22em; padding: 0 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255,255,255,0.5);
+    flex-shrink: 0;
+  }
+  .formula-track span.dot {
+    color: rgba(255,255,255,0.4);
+    font-size: 1rem; padding: 0 0.5rem;
+    font-weight: 400; letter-spacing: 0;
+    text-shadow: none;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blue);
+    background: var(--blue-lt); border: 1px solid rgba(26,86,219,0.22);
+    padding: 0.3rem 0.9rem; border-radius: 100px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-title {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(3.5rem, 13vw, 8rem);
+    font-weight: 700; line-height: 0.9; letter-spacing: -0.02em;
+    margin-bottom: 1rem; color: var(--ink);
+    animation: fadeUp 0.7s 0.08s ease both;
+  }
+  .hero-title .ma    { color: var(--red); }
+  .hero-title .prism { color: var(--blue); }
+  .hero-subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(0.65rem, 2.5vw, 0.85rem); color: var(--muted);
+    max-width: 480px; margin: 0 auto 0.6rem;
+    animation: fadeUp 0.7s 0.14s ease both; line-height: 1.6;
+  }
+  .hero-quote {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem); font-style: italic;
+    color: var(--ink2); margin-bottom: 2.5rem;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  /* Stats bar */
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 2.5rem; width: 100%; max-width: 580px;
+    border: 1.5px solid var(--border2); border-radius: 12px;
+    overflow: hidden; background: var(--surface); box-shadow: var(--shadow);
+    animation: fadeUp 0.7s 0.24s ease both;
+  }
+  .stat {
+    padding: 1rem 0.75rem; text-align: center;
+    border-right: 1.5px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.3rem, 4vw, 2rem); font-weight: 700;
+    color: var(--blue); line-height: 1;
+  }
+  .stat-num.red   { color: var(--red); }
+  .stat-num.green { color: var(--green); }
+  .stat-label {
+    font-size: 0.62rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem;
+  }
+  .hero-actions {
+    display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;
+    animation: fadeUp 0.7s 0.28s ease both;
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    background: var(--blue); color: #fff;
+    padding: 0.8rem 1.8rem; border-radius: 7px;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.9rem;
+    text-decoration: none; transition: all 0.18s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .btn-primary:hover { background: var(--blue-dk); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,86,219,0.25); }
+  .btn-outline {
+    border: 1.5px solid var(--border2); color: var(--ink2);
+    padding: 0.8rem 1.8rem; border-radius: 7px;
+    font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.9rem;
+    text-decoration: none; transition: all 0.18s; background: var(--surface);
+  }
+  .btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+
+  /* ════════════════════════════
+     SECTION SHELLS
+  ════════════════════════════ */
+  section { position: relative; padding: 5rem 1.25rem; }
+  .alt-bg  { background: var(--bg2); }
+  .dark-section { background: var(--dark-bg); }
+  .container { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(1.75rem, 4vw, 2.8rem); font-weight: 700;
+    line-height: 1.1; letter-spacing: -0.01em;
+    margin-bottom: 0.8rem; color: var(--ink);
+  }
+  .section-desc { color: var(--muted); font-size: 0.92rem; max-width: 540px; line-height: 1.75; }
+
+  /* ════════════════════════════
+     WHY MA-PRISM
+  ════════════════════════════ */
+  .diff-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1.25rem; margin-top: 3rem;
+  }
+  .diff-card {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: 12px; padding: 1.75rem 1.5rem;
+    position: relative; overflow: hidden; transition: all 0.22s;
+    box-shadow: var(--shadow);
+  }
+  .diff-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .diff-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+  .diff-card.bt-blue::before  { background: var(--blue); }
+  .diff-card.bt-red::before   { background: var(--red); }
+  .diff-card.bt-green::before { background: var(--green); }
+  .diff-icon  { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+  .diff-title { font-family:'EB Garamond',serif; font-size:1.2rem; font-weight:700; margin-bottom:0.5rem; color:var(--ink); }
+  .diff-text  { font-size:0.85rem; color:var(--muted); line-height:1.7; }
+  .diff-badge {
+    display:inline-block; margin-top:1rem;
+    font-family:'JetBrains Mono',monospace; font-size:0.62rem; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase;
+    padding:0.2rem 0.65rem; border-radius:100px;
+  }
+  .diff-badge.blue  { background:var(--blue-lt);  color:var(--blue); }
+  .diff-badge.red   { background:var(--red-lt);   color:var(--red); }
+  .diff-badge.green { background:var(--green-lt); color:var(--green); }
+
+  /* ── VS TABLE ── */
+  .vs-table-wrap {
+    margin-top: 2.5rem;
+    background: var(--surface); border: 1.5px solid var(--border2);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--shadow);
+  }
+  .vs-table-head {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    background: var(--dark-bg); padding: 0.85rem 1.5rem;
+    gap: 0.5rem;
+  }
+  .vs-table-head span {
+    font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+    text-transform:uppercase; letter-spacing:0.15em;
+    color: var(--dark-muted); font-weight:700;
+  }
+  .vs-table-head span:nth-child(2) { color:#7eb3f8; text-align:center; }
+  .vs-table-head span:nth-child(3) { color:rgba(255,255,255,0.35); text-align:center; }
+  .vs-row {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    padding: 0.85rem 1.5rem; gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    align-items: center; transition: background 0.15s;
+  }
+  .vs-row:last-child { border-bottom: none; }
+  .vs-row:hover { background: var(--bg2); }
+  .vs-feature {
+    font-size: 0.88rem; color: var(--ink2); font-weight: 500;
+  }
+  .vs-cell { text-align: center; }
+  .tick { font-size: 1rem; }
+  .tick.yes  { color: var(--green); }
+  .tick.no   { color: var(--red); opacity: 0.7; }
+  .tick.part { color: var(--amber); }
+
+  /* ════════════════════════════
+     WHO IS THIS FOR
+  ════════════════════════════ */
+  .personas-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1.25rem; margin-top: 3rem;
+  }
+  .persona-card {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: 14px; padding: 1.6rem 1.4rem;
+    transition: all 0.22s; box-shadow: var(--shadow);
+  }
+  .persona-card:hover { transform: translateY(-3px); border-color: var(--blue); box-shadow: var(--shadow-lg); }
+  .persona-emoji { font-size: 1.8rem; margin-bottom: 0.75rem; display: block; }
+  .persona-type  { font-family:'JetBrains Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--blue); margin-bottom:0.3rem; }
+  .persona-name  { font-family:'EB Garamond',serif; font-size:1.1rem; font-weight:700; margin-bottom:0.45rem; color:var(--ink); }
+  .persona-desc  { font-size:0.83rem; color:var(--muted); line-height:1.65; margin-bottom:0.85rem; }
+  .persona-tags  { display:flex; flex-wrap:wrap; gap:0.35rem; }
+  .ptag {
+    font-family:'JetBrains Mono',monospace; font-size:0.6rem; font-weight:700;
+    padding:0.15rem 0.5rem; border-radius:4px; letter-spacing:0.05em;
+  }
+  .ptag.blue  { background:var(--blue-lt);  color:var(--blue); }
+  .ptag.red   { background:var(--red-lt);   color:var(--red); }
+  .ptag.green { background:var(--green-lt); color:var(--green); }
+  .ptag.amber { background:var(--amber-lt); color:var(--amber); }
+
+  .net-callout {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, var(--blue-lt), var(--green-lt));
+    border: 1.5px solid var(--blue); border-radius: 14px;
+    padding: 1.6rem 2rem;
+    display: flex; gap: 1.2rem; align-items: flex-start; flex-wrap: wrap;
+  }
+  [data-theme="dark"] .net-callout {
+    background: linear-gradient(135deg, rgba(91,156,246,0.1), rgba(74,222,128,0.08));
+  }
+  .net-icon  { font-size:2rem; flex-shrink:0; margin-top:0.1rem; }
+  .net-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--green); margin-bottom:0.25rem; }
+  .net-title { font-family:'EB Garamond',serif; font-size:1.2rem; font-weight:700; color:var(--ink); margin-bottom:0.35rem; }
+  .net-text  { font-size:0.85rem; color:var(--ink2); line-height:1.65; }
+
+  /* ════════════════════════════
+     TOPICS
+  ════════════════════════════ */
+  .topics-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(170px,1fr));
+    gap: 0.9rem; margin-top: 3rem;
+  }
+  .topic-card {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.1rem;
+    transition: all 0.2s; box-shadow: var(--shadow);
+  }
+  .topic-card:hover { border-color:var(--blue); box-shadow:var(--shadow-lg); transform:translateY(-2px); }
+  .topic-code {
+    font-family:'JetBrains Mono',monospace; font-size:0.62rem; color:var(--blue);
+    background:var(--blue-lt); padding:0.12rem 0.45rem; border-radius:3px;
+    display:inline-block; margin-bottom:0.5rem; font-weight:700;
+  }
+  .topic-name  { font-weight:700; font-size:0.88rem; margin-bottom:0.35rem; color:var(--ink); line-height:1.3; }
+  .topic-count { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--muted); }
+  .topic-count b { color:var(--green); }
+
+  /* ════════════════════════════
+     DAILY SCHEDULE
+  ════════════════════════════ */
+  .sessions-row {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1.25rem; margin-top: 3rem;
+  }
+  .session-card {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: 12px; padding: 1.75rem 1.4rem; text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .session-icon { font-size:1.6rem; margin-bottom:0.5rem; display:block; }
+  .session-time { font-family:'JetBrains Mono',monospace; font-size:1.5rem; font-weight:700; color:var(--blue); margin-bottom:0.15rem; }
+  .session-name { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); margin-bottom:0.75rem; }
+  .session-desc { font-size:0.83rem; color:var(--ink2); line-height:1.6; }
+  .ans-badge {
+    display:inline-block; margin-top:0.75rem;
+    background:var(--blue-lt); color:var(--blue);
+    font-family:'JetBrains Mono',monospace; font-size:0.62rem; font-weight:700;
+    padding:0.18rem 0.6rem; border-radius:100px; letter-spacing:0.07em;
+  }
+  .two-hr {
+    margin-top:2rem; background:var(--dark-bg);
+    border-radius:12px; padding:1.75rem 2rem;
+    display:flex; gap:1.5rem; align-items:flex-start;
+  }
+  .thr-icon  { font-size:2rem; flex-shrink:0; }
+  .thr-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--dark-label); margin-bottom:0.3rem; }
+  .thr-title { font-family:'EB Garamond',serif; font-size:1.3rem; font-weight:700; color:var(--dark-txt); margin-bottom:0.4rem; }
+  .thr-text  { font-size:0.85rem; color:var(--dark-muted); line-height:1.7; }
+
+  .sched-table {
+    width:100%; border-collapse:collapse; margin-top:2.5rem;
+    background:var(--surface); border:1.5px solid var(--border);
+    border-radius:10px; overflow:hidden; font-size:0.85rem;
+    box-shadow:var(--shadow);
+  }
+  .sched-table th {
+    background:var(--dark-bg); color:var(--dark-txt);
+    font-family:'JetBrains Mono',monospace; font-size:0.62rem;
+    text-transform:uppercase; letter-spacing:0.12em;
+    padding:0.75rem 1.1rem; text-align:left;
+  }
+  .sched-table td {
+    padding:0.7rem 1.1rem; border-bottom:1px solid var(--border);
+    color:var(--ink2); vertical-align:top;
+  }
+  .sched-table tr:last-child td { border-bottom:none; }
+  .sched-table tr:hover td { background:var(--bg2); }
+  .tc { font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:700; color:var(--blue); white-space:nowrap; }
+  .ec { font-weight:600; color:var(--ink); }
+  .rm td { border-left:3px solid #f59e0b; }
+  .ra td { border-left:3px solid var(--blue); }
+  .re td { border-left:3px solid var(--red); }
+  .rn td { border-left:3px solid var(--border2); }
+
+  /* ════════════════════════════
+     FOUNDER
+  ════════════════════════════ */
+  .founder-wrap {
+    display: grid; grid-template-columns: 140px 1fr;
+    gap: 2.5rem; margin-top: 3rem; align-items: start;
+  }
+  .founder-av {
+    width:140px; height:140px; border-radius:50%;
+    background: linear-gradient(135deg, var(--blue-lt), var(--green-lt));
+    border:3px solid var(--blue);
+    display:flex; align-items:center; justify-content:center;
+    font-size:3.5rem; flex-shrink:0;
+  }
+  [data-theme="dark"] .founder-av {
+    background: linear-gradient(135deg, rgba(91,156,246,0.15), rgba(74,222,128,0.1));
+  }
+  .founder-name { font-family:'EB Garamond',serif; font-size:1.8rem; font-weight:700; color:var(--ink); }
+  .founder-role { font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--blue); text-transform:uppercase; letter-spacing:0.14em; margin:0.2rem 0 1rem; }
+  .founder-bio  { font-size:0.9rem; color:var(--ink2); line-height:1.75; max-width:600px; margin-bottom:1rem; }
+  .chips { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.2rem; }
+  .chip  { font-family:'JetBrains Mono',monospace; font-size:0.65rem; font-weight:700; padding:0.25rem 0.7rem; border-radius:5px; letter-spacing:0.05em; background:var(--surface); border:1.5px solid var(--border2); color:var(--ink2); }
+  .founder-email {
+    display:inline-flex; align-items:center; gap:0.5rem;
+    background:var(--surface); border:1.5px solid var(--border2);
+    border-radius:7px; padding:0.6rem 1.1rem;
+    text-decoration:none; color:var(--ink2); font-size:0.82rem;
+    font-family:'JetBrains Mono',monospace; transition:all 0.18s;
+  }
+  .founder-email:hover { border-color:var(--blue); color:var(--blue); }
+
+  /* ════════════════════════════
+     GAME
+  ════════════════════════════ */
+  .game-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:3rem; }
+  .game-card {
+    background:var(--game-bg); border:1px solid var(--game-bdr);
+    border-radius:16px; padding:2rem 1.75rem;
+    position:relative; overflow:hidden; transition:all 0.22s;
+  }
+  .game-card:hover { border-color:rgba(126,179,248,0.4); background:var(--game-hover); transform:translateY(-3px); }
+  .game-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,#7eb3f8,#f87171); }
+  .game-tag  { font-family:'JetBrains Mono',monospace; font-size:0.62rem; text-transform:uppercase; letter-spacing:0.18em; color:#7eb3f8; margin-bottom:0.8rem; }
+  .game-name { font-family:'EB Garamond',serif; font-size:1.5rem; font-weight:700; color:var(--dark-txt); margin-bottom:0.5rem; line-height:1.15; }
+  .game-desc { font-size:0.85rem; color:var(--dark-muted); line-height:1.7; margin-bottom:1.2rem; }
+  .game-link {
+    display:inline-flex; align-items:center; gap:0.4rem;
+    background:var(--game-btn); color:var(--game-btn-c);
+    padding:0.6rem 1.3rem; border-radius:6px;
+    text-decoration:none; font-weight:700; font-size:0.82rem;
+    transition:all 0.18s;
+  }
+  .game-link:hover { opacity:0.85; transform:translateY(-1px); }
+
+  /* ════════════════════════════
+     RULES
+  ════════════════════════════ */
+  .rules-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.9rem; margin-top:3rem; }
+  .rule-card {
+    background:var(--surface); border:1.5px solid var(--border);
+    border-radius:10px; padding:1.25rem 1.3rem;
+    display:flex; gap:0.85rem; align-items:flex-start; transition:all 0.18s;
+    box-shadow:var(--shadow);
+  }
+  .rule-card:hover { border-color:var(--blue); }
+  .rule-num {
+    font-family:'JetBrains Mono',monospace; font-size:0.65rem; font-weight:700;
+    color:var(--blue); background:var(--blue-lt);
+    width:26px; height:26px; border-radius:5px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .rule-content strong { font-size:0.88rem; display:block; margin-bottom:0.2rem; color:var(--ink); }
+  .rule-content p { font-size:0.8rem; color:var(--muted); line-height:1.55; }
+
+  /* ════════════════════════════
+     COUNTDOWN + JOIN
+  ════════════════════════════ */
+  .join-box {
+    background: var(--surface); border:1.5px solid var(--border2);
+    border-radius:18px; padding:3.5rem 2.5rem; text-align:center;
+    position:relative; overflow:hidden; box-shadow:var(--shadow);
+  }
+  .join-box .graph-bg { opacity:0.3; }
+  .countdown-wrap {
+    background:var(--dark-bg); border-radius:14px;
+    padding:2rem 1.5rem; margin-bottom:2.5rem;
+    position:relative; z-index:1;
+  }
+  .cd-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--dark-label); margin-bottom:1rem; }
+  .cd-units  { display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; align-items:center; }
+  .cd-block  { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:9px; padding:0.85rem 1.2rem; min-width:72px; text-align:center; }
+  .cd-num    { font-family:'JetBrains Mono',monospace; font-size:2.2rem; font-weight:700; color:var(--dark-label); line-height:1; }
+  .cd-lbl    { font-size:0.58rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--dark-muted); margin-top:0.25rem; }
+  .cd-sep    { font-family:'JetBrains Mono',monospace; font-size:1.8rem; color:var(--dark-muted); padding-bottom:0.4rem; }
+  .cd-sub    { font-family:'EB Garamond',serif; font-style:italic; font-size:0.95rem; color:var(--dark-muted); margin-top:1rem; }
+
+  .join-tag  {
+    font-family:'JetBrains Mono',monospace; font-size:0.65rem; letter-spacing:0.22em;
+    text-transform:uppercase; color:var(--green);
+    background:var(--green-lt); border:1px solid rgba(26,122,74,0.2);
+    padding:0.28rem 0.85rem; border-radius:100px;
+    display:inline-block; margin-bottom:1.2rem; position:relative; z-index:1;
+  }
+  .join-title { font-family:'EB Garamond',serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:700; margin-bottom:0.85rem; color:var(--ink); line-height:1.1; position:relative; z-index:1; }
+  .join-title span { color:var(--blue); }
+  .join-desc  { color:var(--muted); font-size:0.9rem; max-width:440px; margin:0 auto 2rem; line-height:1.7; position:relative; z-index:1; }
+  .join-btns  { display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; position:relative; z-index:1; }
+  .join-note  { margin-top:1.2rem; font-size:0.7rem; color:var(--muted); font-family:'JetBrains Mono',monospace; position:relative; z-index:1; }
+
+  /* ════════════════════════════
+     FOOTER
+  ════════════════════════════ */
+  footer {
+    background: var(--dark-bg); color: var(--dark-muted);
+    padding: 2.5rem 1.5rem 2rem; text-align: center;
+  }
+
+  /* Row 1 — Logo */
+  .footer-brand {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+  .footer-psi {
+    font-size: 1.6rem; line-height: 1;
+    color: var(--dark-label);
+    font-family: 'EB Garamond', serif;
+  }
+  .footer-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--dark-label); letter-spacing: 0.08em;
+  }
+
+  /* Row 2 — Full name + author */
+  .footer-fullname {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.92rem; font-style: italic;
+    color: rgba(245,245,240,0.45);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  /* Row 3 — Nav links */
+  .footer-links {
+    display: flex; gap: 1.4rem; justify-content: center;
+    flex-wrap: wrap; list-style: none; margin-bottom: 1.5rem;
+  }
+  .footer-links a {
+    color: rgba(245,245,240,0.38); text-decoration: none;
+    font-size: 0.78rem; transition: color 0.18s;
+  }
+  .footer-links a:hover { color: var(--dark-label); }
+
+  /* Row 4 — link + copyright */
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 0.6rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-ext-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; color: rgba(245,245,240,0.35);
+    text-decoration: none; transition: color 0.18s;
+    word-break: break-all;
+  }
+  .footer-ext-link:hover { color: var(--dark-label); text-decoration: underline; }
+  .footer-sep  { color: rgba(245,245,240,0.2); font-size: 0.75rem; }
+  .footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: rgba(245,245,240,0.35); }
+
+  .divider { width:100%; height:1.5px; background:var(--border); }
+
+  /* ════════════════════════════
+     ANIMATIONS
+  ════════════════════════════ */
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .fi { opacity:0; transform:translateY(16px); transition:opacity 0.55s ease, transform 0.55s ease; }
+  .fi.vis { opacity:1; transform:translateY(0); }
+
+  /* ════════════════════════════
+     RESPONSIVE — TABLET + MOBILE
+  ════════════════════════════ */
+  @media (max-width: 900px) {
+    .diff-grid   { grid-template-columns: 1fr 1fr; }
+    .personas-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    /* Nav */
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    /* Hero */
+    .hero { padding: 5.5rem 1rem 3rem; }
+    .hero-stats { grid-template-columns: repeat(2,1fr); max-width:100%; }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(3) { border-top: 1.5px solid var(--border); }
+    .stat:nth-child(4) { border-right: none; border-top: 1.5px solid var(--border); }
+
+    /* Grids → single column */
+    .diff-grid, .sessions-row, .rules-grid,
+    .game-grid, .personas-grid { grid-template-columns: 1fr; }
+
+    /* Founder stacked */
+    .founder-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+    .founder-av   { width:100px; height:100px; font-size:2.8rem; }
+
+    /* VS table */
+    .vs-table-head span:nth-child(3),
+    .vs-row .vs-cell:last-child { display: none; }
+    .vs-table-head { grid-template-columns: 2fr 1fr; }
+    .vs-row        { grid-template-columns: 2fr 1fr; }
+
+    /* Others */
+    .two-hr   { flex-direction:column; padding:1.5rem; }
+    .net-callout { flex-direction:column; }
+    .join-box { padding:2rem 1.25rem; }
+    .cd-num   { font-size:1.6rem; }
+    section   { padding:3.5rem 1rem; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- ══ FIXED MARQUEE STRIP ══ -->
+<div class="formula-strip" aria-hidden="true">
+  <div class="formula-track">
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span class="dot">★</span>
+    <span>CSIR-NET Mathematics Target December 2026</span>
+    <span>·</span>
+    <span>‖Tf‖ ≤ M‖f‖</span>
+    <span>·</span>
+    <span>π(x) ~ x / ln(x)</span>
+    <span>·</span>
+    <span>e^(iπ) + 1 = 0</span>
+    <span>·</span>
+    <span>P(A|B) = P(B|A)·P(A) / P(B)</span>
+    <span>·</span>
+    <span>|G| = |H|·[G:H]</span>
+    <span>·</span>
+    <span>lim (1 + 1/n)ⁿ = e</span>
+    <span>·</span>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#" class="nav-logo"><span class="psi">Ψ</span> MA&#8209;PRISM</a>
+
+  <ul class="nav-links">
+    <li><a href="#why">Why</a></li>
+    <li><a href="#for-whom">For Whom</a></li>
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="#how">Schedule</a></li>
+    <li><a href="#founder">Founder</a></li>
+    <li><a href="#game">Game</a></li>
+    <li><a href="#rules">Rules</a></li>
+    <li><a href="https://forms.gle/5Su87qZvgS84YCmCA" target="_blank" class="nav-cta">Join Free →</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <div class="toggle-thumb" id="toggleThumb">☀️</div>
+      <span class="toggle-bg-icon" id="toggleBgIcon">🌙</span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#why"      onclick="closeMob()">Why MA-PRISM</a>
+  <a href="#for-whom" onclick="closeMob()">Who Is This For</a>
+  <a href="#topics"   onclick="closeMob()">Topics</a>
+  <a href="#how"      onclick="closeMob()">Daily Schedule</a>
+  <a href="#founder"  onclick="closeMob()">Founder</a>
+  <a href="#game"     onclick="closeMob()">Game</a>
+  <a href="#rules"    onclick="closeMob()">Rules</a>
+  <a href="https://forms.gle/5Su87qZvgS84YCmCA" target="_blank" class="mob-cta" onclick="closeMob()">Join Free — Register Now →</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="graph-bg faded"></div>
+
+  <div class="hero-eyebrow">Free · WhatsApp Community · Mathematics Competitive Exams</div>
+  <h1 class="hero-title"><span class="ma">MA</span>&#8209;<span class="prism">PRISM</span></h1>
+  <p class="hero-subtitle">Mathematics PYQs Ready In Schrödinger's Method<br>Structured daily practice for mathematics competitive exam aspirants</p>
+  <p class="hero-quote">"Collapse the uncertainty. Solve the mathematics."</p>
+
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num" data-target="1729">1729</div><div class="stat-label">PYQs</div></div>
+    <div class="stat"><div class="stat-num red" data-target="10">10</div><div class="stat-label">Topics</div></div>
+    <div class="stat"><div class="stat-num" data-target="15">15</div><div class="stat-label">Qs / Day</div></div>
+    <div class="stat"><div class="stat-num green">Free</div><div class="stat-label">Forever</div></div>
+  </div>
+
+  <div class="hero-actions">
+    <a href="https://forms.gle/5Su87qZvgS84YCmCA" target="_blank" class="btn-primary">Join the Community →</a>
+    <a href="#why" class="btn-outline">Learn More</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ WHY MA-PRISM ══ -->
+<section id="why" class="alt-bg">
+  <div class="container">
+    <div class="section-label">Why MA-PRISM?</div>
+    <h2 class="section-title">Three things no paid coaching<br>will give you — for free.</h2>
+    <p class="section-desc">MA-PRISM is built differently. Here's exactly how it stands apart from every other programme.</p>
+
+    <div class="diff-grid fi">
+      <div class="diff-card bt-blue">
+        <span class="diff-icon">₹0</span>
+        <div class="diff-title">Completely Free. No Catch.</div>
+        <p class="diff-text">No fee. No subscription. No paid tier. Every question and its answer key — free forever. Quality preparation should never be behind a paywall.</p>
+        <span class="diff-badge blue">100% Free Programme</span>
+      </div>
+      <div class="diff-card bt-red">
+        <span class="diff-icon">🔬</span>
+        <div class="diff-title">Built by a Researcher, Not Just a Tutor.</div>
+        <p class="diff-text">Founded by a chemistry researcher who bridges physical intuition with mathematical rigour.</p>
+        <span class="diff-badge red">Research-Backed Pedagogy</span>
+      </div>
+      <div class="diff-card bt-green">
+        <span class="diff-icon">💬</span>
+        <div class="diff-title">Thinking-First, Not Lecture-First.</div>
+        <p class="diff-text">Answers are withheld for 2 hours after each post. You solve first. You discuss. You learn. Active problem-solving — not passive watching of recorded lectures.</p>
+        <span class="diff-badge green">Active Problem-Solving</span>
+      </div>
+    </div>
+
+    <!-- VS TABLE -->
+    <div class="vs-table-wrap fi">
+      <div class="vs-table-head">
+        <span>Feature</span>
+        <span>✦ MA-PRISM</span>
+        <span>Typical Paid Coaching</span>
+      </div>
+      <div class="vs-row"><div class="vs-feature">Cost</div><div class="vs-cell"><span class="tick yes">✓</span> <span style="font-size:0.8rem;color:var(--green);font-weight:700;">₹0 forever</span></div><div class="vs-cell"><span class="tick no">✗</span> <span style="font-size:0.78rem;color:var(--muted);">₹5k–₹30k/yr</span></div></div>
+      <div class="vs-row"><div class="vs-feature">1,500+ PYQs organised by topic</div><div class="vs-cell"><span class="tick yes">✓</span></div><div class="vs-cell"><span class="tick part">~</span></div></div>
+      <div class="vs-row"><div class="vs-feature">Daily structured question sessions</div><div class="vs-cell"><span class="tick yes">✓</span></div><div class="vs-cell"><span class="tick part">~</span></div></div>
+      <div class="vs-row"><div class="vs-feature">Consistent yet flexible</div><div class="vs-cell"><span class="tick yes">✓</span></div><div class="vs-cell"><span class="tick no">✗</span></div></div>
+      <div class="vs-row"><div class="vs-feature">Questions from multiple exam sources</div><div class="vs-cell"><span class="tick yes">✓</span></div><div class="vs-cell"><span class="tick part">~</span></div></div>
+      <div class="vs-row"><div class="vs-feature">Built by a domain researcher</div><div class="vs-cell"><span class="tick yes">✓</span></div><div class="vs-cell"><span class="tick no">✗</span></div></div>
+      <div class="vs-row"><div class="vs-feature">No live class schedule to follow</div><div class="vs-cell"><span class="tick yes">✓</span></div><div class="vs-cell"><span class="tick no">✗</span></div></div>
+      <div class="vs-row"><div class="vs-feature">WhatsApp — no new app to install</div><div class="vs-cell"><span class="tick yes">✓</span></div><div class="vs-cell"><span class="tick no">✗</span></div></div>
+    </div>
+    <p style="margin-top:0.6rem; font-size:0.72rem; color:var(--muted); font-family:'JetBrains Mono',monospace;">✓ = Yes &nbsp;·&nbsp; ✗ = No &nbsp;·&nbsp; ~ = Partial / varies</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ WHO IS THIS FOR ══ -->
+<section id="for-whom">
+  <div class="container">
+    <div class="section-label">Who Is This For?</div>
+    <h2 class="section-title">Built for every serious<br>mathematics aspirant.</h2>
+    <p class="section-desc">Whether you're a fresh MSc graduate or retrying after years in the field — if mathematics competitive exams are your goal, MA-PRISM is designed for you.</p>
+
+    <div class="personas-grid fi">
+      <div class="persona-card">
+        <span class="persona-emoji">🎓</span>
+        <div class="persona-type">Profile 01</div>
+        <div class="persona-name">The Final-Year MSc Student</div>
+        <p class="persona-desc">Currently finishing your MSc Mathematics. You want a daily problem-solving habit alongside coursework — and want to clear mathematics competitive exams before your thesis begins.</p>
+        <div class="persona-tags">
+          <span class="ptag blue">MSc Maths</span>
+          <span class="ptag green">First Attempt</span>
+          <span class="ptag amber">Dec 2026 NET</span>
+        </div>
+      </div>
+      <div class="persona-card">
+        <span class="persona-emoji">🔁</span>
+        <div class="persona-type">Profile 02</div>
+        <div class="persona-name">The Dedicated Retaker</div>
+        <p class="persona-desc">You've attempted before. You know the syllabus but need systematic daily practice, not more theory. MA-PRISM gives you structure, accountability, and 1,729 questions to work through.</p>
+        <div class="persona-tags">
+          <span class="ptag red">Retaker</span>
+          <span class="ptag blue">PYQ Focus</span>
+          <span class="ptag amber">Dec 2026 NET</span>
+        </div>
+      </div>
+      <div class="persona-card">
+        <span class="persona-emoji">💼</span>
+        <div class="persona-type">Profile 03</div>
+        <div class="persona-name">The Working Professional</div>
+        <p class="persona-desc">You're employed but haven't given up on your mathematics goals. Three sessions a day — 15 questions total — fit around a job. No live classes to miss. No fees to pay.</p>
+        <div class="persona-tags">
+          <span class="ptag green">Flexible Schedule</span>
+          <span class="ptag blue">Self-Paced</span>
+          <span class="ptag amber">Dec 2026 NET</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="net-callout fi">
+      <div class="net-icon">🎯</div>
+      <div>
+        <div class="net-label">Primary Target</div>
+        <div class="net-title">December 2026 CSIR NET — Mathematics</div>
+        <p class="net-text">The programme is timed to complete the full 1,729-question bank well before the December 2026 NET cycle, leaving a structured revision window. Every topic, every subtopic, every source — covered systematically. If December 2026 CSIR NET Mathematics is your goal, this community is built exactly for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ TOPICS ══ -->
+<section id="topics" class="alt-bg">
+  <div class="container">
+    <div class="section-label">Curriculum</div>
+    <h2 class="section-title">10 core topics.<br>Every exam. Every year.</h2>
+    <p class="section-desc">Complete syllabus coverage for mathematics competitive exams — organised by topic so your preparation is systematic, never scattered.</p>
+
+    <div class="topics-grid fi">
+      <div class="topic-card"><div class="topic-code">[LA]</div><div class="topic-name">Linear Algebra</div><div class="topic-count"><b>270</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[RA]</div><div class="topic-name">Real Analysis</div><div class="topic-count"><b>319</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[AA]</div><div class="topic-name">Abstract Algebra</div><div class="topic-count"><b>176</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[CA]</div><div class="topic-name">Complex Analysis</div><div class="topic-count"><b>131</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[TP]</div><div class="topic-name">Topology</div><div class="topic-count"><b>92</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[FA]</div><div class="topic-name">Functional Analysis</div><div class="topic-count"><b>37</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[DE]</div><div class="topic-name">ODEs &amp; PDEs</div><div class="topic-count"><b>150</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[PS]</div><div class="topic-name">Probability &amp; Statistics</div><div class="topic-count"><b>183</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[NA]</div><div class="topic-name">Numerical Analysis &amp; Optimization</div><div class="topic-count"><b>79</b> questions</div></div>
+      <div class="topic-card"><div class="topic-code">[CM]</div><div class="topic-name">Combinatorics, Number Theory &amp; Misc</div><div class="topic-count"><b>90</b> questions</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ DAILY SCHEDULE ══ -->
+<section id="how">
+  <div class="container">
+    <div class="section-label">Daily Structure</div>
+    <h2 class="section-title">Four batches.<br>Every single day.</h2>
+    <p class="section-desc">A fixed daily rhythm — 15 questions across four batches. Answer keys released after each window closes. No solution discussions; peer exchange only.</p>
+
+    <div class="sessions-row fi" style="grid-template-columns: repeat(3,1fr);">
+      <div class="session-card">
+        <span class="session-icon">🌅</span>
+        <div class="session-time">9:00 AM</div>
+        <div class="session-name">Morning · 5 Questions</div>
+        <div class="session-desc">Attempt all 5 with full working. Post your reasoning in the Morning group before the key drops.</div>
+        <span class="ans-badge">Answer Key at 12:00 PM</span>
+      </div>
+      <div class="session-card">
+        <span class="session-icon">☀️</span>
+        <div class="session-time">2:00 PM</div>
+        <div class="session-name">Afternoon · 2 Questions</div>
+        <div class="session-desc">A focused 2-question set. Attempt independently — show every step before comparing.</div>
+        <span class="ans-badge">Answer Key at 3:00 PM</span>
+      </div>
+      <div class="session-card">
+        <span class="session-icon">🕓</span>
+        <div class="session-time">4:00 PM</div>
+        <div class="session-name">Late Afternoon · 3 Questions</div>
+        <div class="session-desc">3 more questions to carry you through the afternoon. Post working before the key is out.</div>
+        <span class="ans-badge">Answer Key at 6:00 PM</span>
+      </div>
+    </div>
+
+    <!-- Night session separate for emphasis -->
+    <div class="sessions-row fi" style="grid-template-columns:1fr; max-width:360px; margin-top:1rem;">
+      <div class="session-card" style="text-align:center;">
+        <span class="session-icon">🌙</span>
+        <div class="session-time">8:00 PM</div>
+        <div class="session-name">Night · 5 Questions</div>
+        <div class="session-desc">Final 5 for the day. Attempt seriously — the longest window, so use it well.</div>
+        <span class="ans-badge">Answer Key at 11:00 PM</span>
+      </div>
+    </div>
+
+    <div class="two-hr fi">
+      <div class="thr-icon">🔑</div>
+      <div>
+        <div class="thr-label">How It Works</div>
+        <div class="thr-title">Questions → Attempt → Answer Key. That's It.</div>
+        <p class="thr-text">Bebeto posts the questions and drops the answer key after each window. There are no solution walkthroughs, no explanations from the admin, and no lectures. Members discuss among themselves — post your working, compare with peers, and learn through the exchange. This is deliberate: the struggle of working it out is the learning.</p>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="sched-table fi">
+        <thead><tr><th>Time</th><th>Event</th><th>Your Action</th></tr></thead>
+        <tbody>
+          <tr class="rm"><td class="tc">9:00 AM</td><td class="ec">🌅 Morning Batch (5 Qs)</td><td>Attempt all 5. Post working in Morning group.</td></tr>
+          <tr class="rm"><td class="tc">12:00 PM</td><td class="ec">Morning Answer Key Released</td><td>Check answers, discuss with peers, note errors.</td></tr>
+          <tr class="ra"><td class="tc">2:00 PM</td><td class="ec">☀️ Afternoon Batch A (2 Qs)</td><td>Attempt both. Post working in Afternoon group.</td></tr>
+          <tr class="ra"><td class="tc">3:00 PM</td><td class="ec">Afternoon A Answer Key Released</td><td>Compare and discuss with peers.</td></tr>
+          <tr class="ra" style="border-left-color:var(--amber)"><td class="tc">4:00 PM</td><td class="ec">🕓 Afternoon Batch B (3 Qs)</td><td>Attempt all 3. Post working in Afternoon group.</td></tr>
+          <tr class="ra" style="border-left-color:var(--amber)"><td class="tc">6:00 PM</td><td class="ec">Afternoon B Answer Key Released</td><td>Compare and discuss with peers.</td></tr>
+          <tr class="re"><td class="tc">8:00 PM</td><td class="ec">🌙 Night Batch (5 Qs)</td><td>Attempt all 5. Post working in Night group.</td></tr>
+          <tr class="re"><td class="tc">11:00 PM</td><td class="ec">Night Answer Key Released</td><td>Final review of the day — 15 questions total.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ FOUNDER ══ -->
+<section id="founder" class="alt-bg">
+  <div class="container">
+    <div class="section-label">About the Founder</div>
+    <h2 class="section-title">Not a coaching brand.<br>A researcher with a plan.</h2>
+
+    <div class="founder-wrap fi">
+      <img src="bebeto.jpeg" alt="Bebeto G." style="width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--blue);flex-shrink:0;box-shadow:var(--shadow-lg);" />
+      <div>
+        <div class="founder-name">Bebeto G.</div>
+        <div class="founder-role">Chemistry Researcher · Community Builder</div>
+        <p class="founder-bio">MA-PRISM is built by a chemistry researcher who believes consistent, independent practice is the only real path to clearing competitive mathematics exams. This community is not a coaching class — there are no live lectures, no solution walkthroughs, and no hand-holding. Bebeto curates the questions, sets the strategy, and releases the answer keys. The rest is on you.</p>
+        <p class="founder-bio">Students are encouraged to discuss problems among themselves, learn from each other's working, and build genuine understanding through peer exchange. The structure is deliberate: think first, compare after, grow together.</p>
+        <div class="chips">
+          <span class="chip">Chemistry Research</span>
+          <span class="chip">Mathematical Sciences</span>
+          <span class="chip">Exam Strategy</span>
+          <span class="chip">Free Education Advocate</span>
+          <span class="chip">Community Builder</span>
+        </div>
+        <a href="mailto:theeasyresearcher@gmail.com" class="founder-email">✉️ &nbsp;theeasyresearcher@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ GAME ══ -->
+<section id="game" class="dark-section">
+  <div class="container">
+    <div class="section-label" style="color:var(--dark-label);">From the Same Ecosystem</div>
+    <h2 class="section-title" style="color:var(--dark-txt);">Learn maths.<br>Then play it.</h2>
+    <p class="section-desc" style="color:var(--dark-muted);">MA-PRISM is part of <em style="color:var(--dark-txt);">The Easy Researcher</em> initiative — building free tools for science and mathematics students. Try the interactive games:</p>
+
+    <div class="game-grid fi">
+      <div class="game-card">
+        <div class="game-tag">⚛️ Physics · Chemistry · Mathematics · GATE Prep</div>
+        <div class="game-name">Schrödinger's Rescue</div>
+        <div class="game-desc">The cat is trapped in one of 20 quantum boxes. Use your knowledge of Physics or Chemistry or Mathematics to rescue it before the oxygen runs out. GATE-style MCQ challenge.</div>
+        <a href="https://theeasyresearcher.github.io/SchrodingersRescue/" target="_blank" class="game-link">Play Now →</a>
+      </div>
+      <div class="game-card">
+        <div class="game-tag">🔢 Mathematics · NET Preparation</div>
+        <div class="game-name">The Hilbert Hunt</div>
+        <div class="game-desc">A mathematics-focused quiz game built specifically for NET preparation. Navigate the Hilbert space of questions — topology, analysis, algebra — and find your way to the answer.</div>
+        <a href="https://theeasyresearcher.github.io/TheHilbertHunt/" target="_blank" class="game-link">Play Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="background:rgba(255,255,255,0.06);"></div>
+
+<!-- ══ RULES ══ -->
+<section id="rules">
+  <div class="container">
+    <div class="section-label">Community Rules</div>
+    <h2 class="section-title">A few simple rules.<br>One culture of rigour.</h2>
+    <p class="section-desc">The quality of practice is the community's greatest asset. These rules protect it — non-negotiable for all members. Note that only answer keys are shared after each session; there are no solution discussions or worked explanations.</p>
+
+    <div class="rules-grid fi">
+      <div class="rule-card"><div class="rule-num">01</div><div class="rule-content"><strong>The 2-Hour Rule</strong><p>Never post the final answer before the window closes. Working and reasoning only. First violation: warning. Second: removal.</p></div></div>
+      <div class="rule-card"><div class="rule-num">02</div><div class="rule-content"><strong>Attempt Before You Discuss</strong><p>Genuinely attempt every question before reading others' posts. Independence first, always.</p></div></div>
+      <div class="rule-card"><div class="rule-num">03</div><div class="rule-content"><strong>Show Your Working</strong><p>Post full working — not just "answer is (c)." A wrong approach with full reasoning beats a correct bare answer.</p></div></div>
+      <div class="rule-card"><div class="rule-num">04</div><div class="rule-content"><strong>Respect All Levels</strong><p>No mocking. No dismissing simpler questions. Every question was hard for someone once. Zero tolerance.</p></div></div>
+      <div class="rule-card"><div class="rule-num">05</div><div class="rule-content"><strong>Post in the Right Group</strong><p>Morning → Morning Session. Afternoon → Afternoon. Evening → Evening. Off-topic posts will be deleted.</p></div></div>
+      <div class="rule-card"><div class="rule-num">06</div><div class="rule-content"><strong>No Spam or Forwarding</strong><p>Do not forward questions or answers outside the community. No unrelated forwards inside either.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ JOIN ══ -->
+<section id="join" class="alt-bg">
+  <div class="container">
+    <div class="join-box">
+      <div class="graph-bg"></div>
+
+      <!-- Countdown -->
+      <div class="countdown-wrap">
+        <div class="cd-label">⏱ Programme begins in</div>
+        <div class="cd-units">
+          <div class="cd-block"><div class="cd-num" id="cd-days">--</div><div class="cd-lbl">Days</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block"><div class="cd-num" id="cd-hours">--</div><div class="cd-lbl">Hours</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block"><div class="cd-num" id="cd-mins">--</div><div class="cd-lbl">Mins</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block"><div class="cd-num" id="cd-secs">--</div><div class="cd-lbl">Secs</div></div>
+        </div>
+        <div class="cd-sub" id="cd-sub">until the programme begins on July 20, 2026</div>
+      </div>
+
+      <div class="join-tag">Completely Free · No Fees · No Catch</div>
+      <h2 class="join-title">Ready to <span>collapse</span><br>the uncertainty?</h2>
+      <p class="join-desc">Fill in the Google Form to register. Once confirmed, you'll be added to the MA-PRISM WhatsApp Community. Open to all students preparing for mathematics competitive exams — all levels welcome.</p>
+      <div class="join-btns">
+        <a href="https://forms.gle/5Su87qZvgS84YCmCA" target="_blank" class="btn-primary" style="font-size:1rem;padding:0.9rem 2.2rem;">Register via Google Form →</a>
+        <a href="#how" class="btn-outline" style="font-size:1rem;padding:0.9rem 2.2rem;">See How It Works</a>
+      </div>
+      <p class="join-note">Registrations open · Starting July 20, 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <!-- Row 1: Logo -->
+  <div class="footer-brand">
+    <span class="footer-psi">Ψ</span>
+    <span class="footer-name">MA&#8209;PRISM</span>
+  </div>
+
+  <!-- Row 2: Full name + author -->
+  <div class="footer-fullname">
+    Mathematics PYQs Ready In Schrödinger's Method &nbsp;(MA&#8209;PRISM) &nbsp;·&nbsp; By Bebeto G.
+  </div>
+
+  <!-- Row 3: Nav links -->
+  <ul class="footer-links">
+    <li><a href="#why">Why MA-PRISM</a></li>
+    <li><a href="#for-whom">For Whom</a></li>
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="#how">Schedule</a></li>
+    <li><a href="#founder">Founder</a></li>
+    <li><a href="#game">Games</a></li>
+    <li><a href="#rules">Rules</a></li>
+    <li><a href="https://forms.gle/5Su87qZvgS84YCmCA" target="_blank">Join Free</a></li>
+  </ul>
+
+  <!-- Row 4: External link + copyright side by side -->
+  <div class="footer-bottom">
+    <a href= Website: "https://sites.google.com/view/schrodingersstudent/initiatives" target="_blank" class="footer-ext-link">
+      https://sites.google.com/view/schrodingersstudent/initiatives
+    </a>
+    <span class="footer-sep">·</span>
+    <span class="footer-copy">© 2026 The Easy Researcher</span>
+  </div>
+</footer>
+
+<script>
+/* ── THEME TOGGLE ── */
+const html  = document.documentElement;
+const tBtn  = document.getElementById('themeToggle');
+const thumb = document.getElementById('toggleThumb');
+const bgIco = document.getElementById('toggleBgIcon');
+function applyTheme(t) {
+  html.setAttribute('data-theme', t);
+  thumb.textContent = t === 'dark' ? '🌙' : '☀️';
+  bgIco.textContent = t === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('maprism-theme', t);
+}
+const saved = localStorage.getItem('maprism-theme');
+if (saved) applyTheme(saved);
+tBtn.addEventListener('click', () =>
+  applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')
+);
+
+/* ── HAMBURGER ── */
+const hbg    = document.getElementById('hamburger');
+const mobMenu= document.getElementById('mobileMenu');
+hbg.addEventListener('click', () => {
+  const open = mobMenu.classList.toggle('open');
+  hbg.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMob() {
+  mobMenu.classList.remove('open');
+  hbg.classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on outside click
+document.addEventListener('click', e => {
+  if (!hbg.contains(e.target) && !mobMenu.contains(e.target)) closeMob();
+});
+
+/* ── COUNTDOWN ── */
+const TARGET = new Date('2026-07-20T00:00:00+05:30').getTime();
+function tick() {
+  const diff = TARGET - Date.now();
+  if (diff <= 0) {
+    document.getElementById('cd-sub').textContent = '🎉 The programme has begun! Register now.';
+    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
+    return;
+  }
+  document.getElementById('cd-days').textContent  = String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(Math.floor(diff%60000/1000)).padStart(2,'0');
+}
+tick(); setInterval(tick, 1000);
+
+/* ── FADE-IN ── */
+const obs = new IntersectionObserver(entries =>
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); })
+, { threshold: 0.07 });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+/* ── COUNTERS ── */
+function count(el, to) {
+  let v = 0, s = to/55;
+  const t = setInterval(() => {
+    v += s;
+    if (v >= to) { el.textContent = to.toLocaleString(); clearInterval(t); }
+    else el.textContent = Math.floor(v).toLocaleString();
+  }, 18);
+}
+const cobs = new IntersectionObserver(entries =>
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('[data-target]').forEach(el => count(el, +el.dataset.target));
+      cobs.unobserve(e.target);
+    }
+  })
+, { threshold: 0.5 });
+const hs = document.querySelector('.hero-stats');
+if (hs) cobs.observe(hs);
+</script>
+</body>
+</html>
